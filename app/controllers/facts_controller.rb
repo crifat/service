@@ -1,18 +1,33 @@
 class FactsController < ApplicationController
   before_action :set_fact, only: [:show, :edit, :update, :destroy]
+  before_filter :cors_preflight_check
+  after_filter :cors_set_access_control_headers
 
-  # GET /facts
-  # GET /facts.json
+  # For all responses in this controller, return the CORS access control headers.
+  def cors_set_access_control_headers
+    headers['Access-Control-Allow-Origin'] = '*'
+    headers['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS'
+    headers['Access-Control-Max-Age'] = "1728000"
+  end
+
+  # If this is a preflight OPTIONS request, then short-circuit the
+  # request, return only the necessary headers and return an empty
+  # text/plain.
+
+  def cors_preflight_check
+    headers['Access-Control-Allow-Origin'] = '*'
+    headers['Access-Control-Allow-Methods'] = 'POST, GET, OPTIONS'
+    headers['Access-Control-Allow-Headers'] = 'X-Requested-With, X-Prototype-Version'
+    headers['Access-Control-Max-Age'] = '1728000'
+  end
+
   def index
     @facts = Fact.all.page params[:page]
   end
 
-  # GET /facts/1
-  # GET /facts/1.json
   def show
   end
 
-  # GET /facts/new
   def new
     @fact = Fact.new
   end
@@ -67,7 +82,11 @@ class FactsController < ApplicationController
     if @fact.nil?
       redirect_to random_fact_facts_path
     else
-      render :json => {body: @fact.body}
+      if params[:jalil] == 'true'
+        render :json => {body: @fact.body.gsub('Chuck Norris', 'Ananta Jalil')}
+      else
+        render :json => {body: @fact.body}
+      end
     end
   end
 
