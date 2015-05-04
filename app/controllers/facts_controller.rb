@@ -67,7 +67,7 @@ class FactsController < ApplicationController
     if @fact.nil?
       redirect_to random_fact_facts_path
     else
-      render :json => @fact.body
+      render :json => {body: @fact.body}
     end
   end
 
