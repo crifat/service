@@ -38,8 +38,8 @@
       <file leaf-file-name="facts_controller.rb" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/controllers/facts_controller.rb">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.5394737" vertical-offset="1029" max-vertical-offset="1635">
-              <caret line="85" column="76" selection-start-line="85" selection-start-column="76" selection-end-line="85" selection-end-column="76" />
+            <state vertical-scroll-proportion="0.44078946" vertical-offset="1074" max-vertical-offset="1635">
+              <caret line="85" column="101" selection-start-line="85" selection-start-column="101" selection-end-line="85" selection-end-column="101" />
               <folding />
             </state>
           </provider>
@@ -801,8 +801,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/controllers/facts_controller.rb">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5394737" vertical-offset="1029" max-vertical-offset="1635">
-          <caret line="85" column="76" selection-start-line="85" selection-start-column="76" selection-end-line="85" selection-end-column="76" />
+        <state vertical-scroll-proportion="0.44078946" vertical-offset="1074" max-vertical-offset="1635">
+          <caret line="85" column="101" selection-start-line="85" selection-start-column="101" selection-end-line="85" selection-end-column="101" />
           <folding />
         </state>
       </provider>

@@ -83,7 +83,7 @@ class FactsController < ApplicationController
       redirect_to random_fact_facts_path
     else
       if params[:jalil] == 'true'
-        render :json => {body: @fact.body.gsub('Chuck Norris', 'Ananta Jalil')}
+        render :json => {body: @fact.body.gsub(/Chuck\ Norris|chuck\ norris|Chuck|chuck|Norris|norris/, 'Ananta Jalil')}
       else
         render :json => {body: @fact.body}
       end
